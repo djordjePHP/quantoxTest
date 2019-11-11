@@ -14,7 +14,15 @@ class ActiveRecord extends Connection
         self::$db->exec("set names utf8");
     }
 
+    public function findWhere($where){
 
+        $query = "SELECT * FROM ".self::$tableName . " WHERE " . $where;
+        $preparedQ = self::$db->prepare($query);
+        $preparedQ->execute();
+        $results = $preparedQ->fetchAll(PDO::FETCH_OBJ);
+
+        return $results;
+    }
 
     public function create(){
         $thisObjVars = get_object_vars($this);
@@ -28,11 +36,24 @@ class ActiveRecord extends Connection
         $keys = implode(',',array_keys($thisObjVars));
         $values = "";
         foreach($thisObjVars as $key => $val){
-            $values .= "'$val',";
+            if($key == 'password'){
+                $values .= "PASSWORD('$val'),";
+            }else{
+                $values .= "'$val',";
+            }
+
         }
-        $q =  self::$db->prepare("INSERT INTO ".self::$tableName." ($keys) VALUES ($values)");
-        $result = $q->execute();
-        $result;
+        $values = trim(trim($values, ','));
+
+        $q =  self::$db->prepare("INSERT INTO ".self::$tableName." ($keys) VALUES ($values);");
+
+        $q->execute();
+        if($q->rowCount()>0){
+            return true;
+        }else{
+            return $q->errorInfo();
+        }
+
     }
 
     public function read($id = null){

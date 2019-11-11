@@ -1,7 +1,7 @@
 <div class="searchForm">
-    <form method="get"  action="#">
+    <form method="POST"  action="?c=users&m=findUsersByTerm">
         <p> Pretraga korisnika</p>
-        <input type="text">
-        <button class="submmitBtn">Pretraga</button>
+        <input value="<?php echo (isset($data['searchTerm'])) ? $data['searchTerm']: '' ?>" name="searchTerm" type="text">
+        <button type="submit" class="submmitBtn">Pretraga</button>
     </form>
 </div>
