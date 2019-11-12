@@ -2,7 +2,7 @@ body{
     font-family: 'Roboto', sans-serif;
     background:#eee;
     padding:0px;
-    margin:0px;
+    margin: 80px auto;
 }
 .container{
     box-sizing: border-box;
@@ -43,4 +43,44 @@ body{
     border-radius: 3px;
     padding: 10px;
     cursor: pointer;
+}
+.errors{
+    border-radius: 3px;
+    background: #FF5722;
+    width: 50%;
+    color: #eee;
+    margin: 0px auto;
+    box-sizing: border-box;
+    padding: 10px;
+}
+.navbar{
+    height: 80px;
+    background: #CCC;
+    position: fixed;
+    width: 100%;
+    margin: -80px auto;
+    box-sizing: border-box;
+    padding: 20px;
+}
+.navbar .buttons{
+    float: right;
+}
+.navbar .appLogo{
+    float: left;
+    font-size: 30px;
+    font-weight: 600;
+    color: #eee;
+    text-shadow: 1px 1px black;
+    cursor:pointer;
+}
+.listOfUsers{
+    padding: 25px;
+    background: #ccc;
+    line-height: 29px;
+    border-radius: 3px;
+    width: 70%;
+    margin: 0px auto;
+}
+.listOfUsers h1{
+    text-align: center;
 }

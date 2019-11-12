@@ -49,9 +49,10 @@ class ActiveRecord extends Connection
 
         $q->execute();
         if($q->rowCount()>0){
-            return true;
+            $lastId = self::$db->lastInsertId();
+            return $this->read($lastId);
         }else{
-            return $q->errorInfo();
+            return false;
         }
 
     }

@@ -1,7 +1,7 @@
 <?php
 
 include 'app/view/forms/search.php';
-?><ul><?php
+?><div class="listOfUsers"><ol><?php
 foreach ($data['users'] as $item => $value) {
 
     ?>
@@ -9,4 +9,4 @@ foreach ($data['users'] as $item => $value) {
     <?php
 
 } ?>
-</ul>
+    </ol></div>

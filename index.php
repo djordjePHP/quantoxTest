@@ -15,5 +15,5 @@ $controllerNamespace = 'App\\controller\\'.$controllerName;
 
 $controller = new $controllerNamespace();
 
-$controller->$method($searchTerm);
+$controller->$method();
 
