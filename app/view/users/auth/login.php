@@ -5,7 +5,7 @@
     }
     ?>
     <form method="POST"  action="?c=auth&m=login">
-        <p> Ulogujte se</p>
+        <p> Uloguj se</p>
         <input placeholder="email" value="<?php echo (isset($data['email'])) ? $data['email']: '' ?>" name="email" type="text">
 
         <input placeholder="lozinka" value="" name="password" type="password">

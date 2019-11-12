@@ -5,7 +5,7 @@
         </head>
         <body>
         <div class="navbar">
-            <a href="/<?php echo APPNAME ?>"><div class="appLogo">  <span>PHP application</span>  </div></a>
+            <a href="/<?php echo APPNAME ?>"><div class="appLogo">  <span><?php echo APPNAME ?></span>  </div></a>
             <div class="buttons">
                 <?php
                 if(isset($_SESSION['user_id'])){
